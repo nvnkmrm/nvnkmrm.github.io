@@ -1,5 +1,4 @@
 import httpProtocol from "./assets/ssl/http_protocol.svg";
-import "./App.css";
 import { Stack } from "@mui/material";
 
 function App() {
