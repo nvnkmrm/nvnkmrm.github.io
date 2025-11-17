@@ -1,5 +1,12 @@
 import HttpProtocolSvg from "./assets/ssl/http_protocol.svg?react";
-import { createTheme, Stack, ThemeProvider, Typography } from "@mui/material";
+import {
+  createTheme,
+  Stack,
+  ThemeProvider,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Divider from "@mui/material/Divider";
 
 const baseTheme = createTheme();
@@ -19,15 +26,24 @@ const theme = createTheme({
 });
 
 function App() {
+  const currentTheme = useTheme();
+  const isMobile = useMediaQuery(currentTheme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(currentTheme.breakpoints.between("sm", "md"));
+
+  const contentWidth = isMobile ? "90vw" : isTablet ? "80vw" : "65vw";
+
   return (
     <ThemeProvider theme={theme}>
       <Stack alignItems={"center"} spacing={1.5} marginTop={"3rem"}>
-        <Typography variant="h3" sx={{ width: "65vw", textAlign: "left" }}>
+        <Typography
+          variant="h3"
+          sx={{ width: contentWidth, textAlign: "left" }}
+        >
           HTTP - Hypertext Transfer Protocol
         </Typography>
-        <Divider sx={{ width: "65vw", borderWidth: 1.3 }} />
+        <Divider sx={{ width: contentWidth, borderWidth: 1.3 }} />
         <HttpProtocolSvg
-          width="65vw"
+          width={contentWidth}
           height="100%"
           style={{ marginTop: "2rem" }}
         />
