@@ -1,4 +1,4 @@
-import HttpProtocolSvg from "../../assets/ssl/http_protocol.svg?react";
+import HttpProtocolSvg from "../../assets/ssl/http_protocol.svg";
 import {
   createTheme,
   Stack,
@@ -43,10 +43,9 @@ const HttpProtocol: React.FC = () => {
           HTTP - Hypertext Transfer Protocol
         </Typography>
         <Divider sx={{ width: contentWidth, borderWidth: 1.3 }} />
-        <HttpProtocolSvg
-          width={contentWidth}
-          height="100%"
-          style={{ marginTop: "2rem" }}
+        <img
+          src={HttpProtocolSvg}
+          style={{ marginTop: "0.5rem", width: contentWidth, height: "100%" }}
         />
       </Stack>
     </ThemeProvider>
