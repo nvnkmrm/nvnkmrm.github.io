@@ -25,7 +25,7 @@ const theme = createTheme({
         fontSize: "1.5rem",
       },
       [baseTheme.breakpoints.up("md")]: {
-        fontSize: "2.5rem",
+        fontSize: "2.1rem",
       },
     },
   },
@@ -34,12 +34,20 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="sticky">
+      <AppBar
+        position="sticky"
+        sx={{
+          boxShadow: "none",
+          borderBottom: "0.05rem solid #ccc",
+        }}
+      >
         <Toolbar>
-          <Typography>Tech Notes by Naveen</Typography>
+          <Typography sx={{ marginLeft: "2rem" }}>
+            Tech Notes by Naveen
+          </Typography>
         </Toolbar>
       </AppBar>
-      <Box sx={{ flexGrow: 1, overflow: "auto" }}>
+      <Box marginTop={"2rem"}>
         <HttpProtocol />
       </Box>
     </ThemeProvider>

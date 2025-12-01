@@ -11,7 +11,7 @@ const HttpProtocol: React.FC = () => {
   const contentWidth = isMobile ? "90vw" : isTablet ? "80vw" : "65vw";
 
   return (
-    <Stack alignItems={"center"} spacing={1.5} marginTop={"1rem"}>
+    <Stack alignItems={"center"} spacing={1.5}>
       <Typography
         variant="h5"
         sx={{ width: contentWidth, textAlign: "center" }}
@@ -21,15 +21,15 @@ const HttpProtocol: React.FC = () => {
       <Divider
         sx={{
           width: contentWidth,
-          height: "0.1rem",
-          background:
-            "linear-gradient(90deg,rgba(235, 236, 240, 1) 8%, rgba(62, 181, 62, 1) 30%, rgba(214, 196, 36, 1) 70%, rgba(235, 236, 240, 1) 92%);",
+          height: "0.056rem",
+          background: theme.palette.primary.dark,
           border: "none",
+          marginTop: "3rem",
         }}
       />
       <img
         src={HttpProtocolSvg}
-        style={{ marginTop: "0.5rem", width: contentWidth, height: "100%" }}
+        style={{ marginTop: "0.2rem", width: contentWidth, height: "100%" }}
         alt={"HTTP Notes"}
       />
     </Stack>
