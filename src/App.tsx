@@ -1,6 +1,5 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import HttpProtocol from "./components/HttpProtocol";
 
 const baseTheme = createTheme();
 const theme = createTheme({
@@ -34,42 +33,17 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar
-          position="fixed"
-          sx={{
-            boxShadow: "none",
-            borderBottom: "0.05rem solid #ccc",
-          }}
-        >
-          <Toolbar>
-            <Typography sx={{ marginLeft: "1rem" }}>
-              Tech Notes by Naveen
-            </Typography>
-          </Toolbar>
-        </AppBar>
-
-        <Box
-          sx={{
-            borderRight: "0.065rem solid #ccc",
-            position: "fixed",
-            left: 0,
-            top: 0,
-            width: "5rem",
-            height: "100%",
-          }}
-        ></Box>
-
-        <Box
-          sx={{
-            marginLeft: "1rem",
-            flexGrow: 1,
-          }}
-        >
-          <Box>
-            <HttpProtocol />
-          </Box>
-        </Box>
+      <Box
+        position={"fixed"}
+        width={"18rem"}
+        height={"100%"}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          borderRight: "0.07rem solid #ccc",
+        }}
+      >
+        <Typography marginTop={"1rem"}>Tech Notes By Naveen</Typography>
       </Box>
     </ThemeProvider>
   );
