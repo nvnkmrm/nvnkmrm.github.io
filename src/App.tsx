@@ -34,21 +34,42 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <AppBar
-        position="sticky"
-        sx={{
-          boxShadow: "none",
-          borderBottom: "0.05rem solid #ccc",
-        }}
-      >
-        <Toolbar>
-          <Typography sx={{ marginLeft: "2rem" }}>
-            Tech Notes by Naveen
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box marginTop={"2rem"}>
-        <HttpProtocol />
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+          position="fixed"
+          sx={{
+            boxShadow: "none",
+            borderBottom: "0.05rem solid #ccc",
+          }}
+        >
+          <Toolbar>
+            <Typography sx={{ marginLeft: "1rem" }}>
+              Tech Notes by Naveen
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        <Box
+          sx={{
+            borderRight: "0.065rem solid #ccc",
+            position: "fixed",
+            left: 0,
+            top: 0,
+            width: "5rem",
+            height: "100%",
+          }}
+        ></Box>
+
+        <Box
+          sx={{
+            marginLeft: "1rem",
+            flexGrow: 1,
+          }}
+        >
+          <Box>
+            <HttpProtocol />
+          </Box>
+        </Box>
       </Box>
     </ThemeProvider>
   );
