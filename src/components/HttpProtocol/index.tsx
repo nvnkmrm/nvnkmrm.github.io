@@ -1,17 +1,26 @@
+import {
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  Divider,
+} from "@mui/material";
+import { useMemo } from "react";
 import HttpProtocolSvg from "../../assets/ssl/http_protocol.svg";
-import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
-import Divider from "@mui/material/Divider";
-import * as React from "react";
 
 const HttpProtocol: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
-  const contentWidth = isMobile ? "90vw" : isTablet ? "80vw" : "65vw";
+  const { contentWidth, contentAlignment } = useMemo(() => {
+    const width = isMobile ? "90vw" : isTablet ? "80vw" : "65vw";
+    const alignment = isMobile || isTablet ? "center" : "start";
+    return { contentWidth: width, contentAlignment: alignment };
+  }, [isMobile, isTablet]);
 
   return (
-    <Stack alignItems={"center"} spacing={1.5}>
+    <Stack alignItems={contentAlignment} spacing={1.5}>
       <Typography
         variant="h5"
         sx={{ width: contentWidth, textAlign: "center" }}
@@ -30,7 +39,7 @@ const HttpProtocol: React.FC = () => {
       <img
         src={HttpProtocolSvg}
         style={{ marginTop: "0.2rem", width: contentWidth, height: "100%" }}
-        alt={"HTTP Notes"}
+        alt="HTTP Notes"
       />
     </Stack>
   );

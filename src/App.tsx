@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Drawer, useMediaQuery } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import HttpProtocol from "./components/HttpProtocol";
 
 const baseTheme = createTheme();
 const theme = createTheme({
@@ -24,20 +25,37 @@ const theme = createTheme({
   },
 });
 
+const LAYOUT_CONFIG = {
+  navBar: {
+    width: {
+      desktop: "17rem",
+      mobile: 0,
+    },
+    borderWidth: "0.07rem",
+  },
+  spacing: {
+    top: "1rem",
+  },
+};
+
 export default function App() {
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const navBarWidth = isDesktop
+    ? LAYOUT_CONFIG.navBar.width.desktop
+    : LAYOUT_CONFIG.navBar.width.mobile;
+
   return (
     <ThemeProvider theme={theme}>
+      <Drawer variant="persistent" open={isDesktop} anchor="left">
+        <Box width={navBarWidth}>Persistent drawer content</Box>
+      </Drawer>
+
       <Box
-        position={"fixed"}
-        width={"18rem"}
-        height={"100%"}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          borderRight: "0.07rem solid #ccc",
-        }}
+        flexGrow={1}
+        marginLeft={navBarWidth}
+        marginTop={LAYOUT_CONFIG.spacing.top}
       >
-        <Typography marginTop={"1rem"}>Tech Notes By Naveen</Typography>
+        <HttpProtocol />
       </Box>
     </ThemeProvider>
   );
