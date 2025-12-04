@@ -1,4 +1,4 @@
-import { Box, Drawer } from "@mui/material";
+import { Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HttpProtocol from "./components/HttpProtocol";
 import { useScreenContext } from "./hooks";
@@ -47,14 +47,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Drawer variant="persistent" open={isDesktop} anchor="left">
-        <Box width={navBarWidth}>Persistent drawer content</Box>
-      </Drawer>
-      <Box
-        flexGrow={1}
-        marginLeft={navBarWidth}
-        marginTop={LAYOUT_CONFIG.spacing.top}
-      >
+      <Box flexGrow={1} marginLeft={navBarWidth} marginTop={"2rem"}>
         <HttpProtocol />
       </Box>
     </ThemeProvider>
