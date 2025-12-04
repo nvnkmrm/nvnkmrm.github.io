@@ -1,17 +1,12 @@
-import {
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
-  Divider,
-} from "@mui/material";
+import { Stack, Typography, useTheme, Divider } from "@mui/material";
 import { useMemo } from "react";
 import HttpProtocolSvg from "../../assets/ssl/http_protocol.svg";
+import { useScreenContext } from "../../hooks";
+import * as React from "react";
 
 const HttpProtocol: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const { isMobile, isTablet } = useScreenContext();
 
   const { contentWidth, contentAlignment } = useMemo(() => {
     const width = isMobile ? "90vw" : isTablet ? "80vw" : "65vw";

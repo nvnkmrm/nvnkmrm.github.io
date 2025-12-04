@@ -1,6 +1,7 @@
-import { Box, Drawer, useMediaQuery } from "@mui/material";
+import { Box, Drawer } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HttpProtocol from "./components/HttpProtocol";
+import { useScreenContext } from "./hooks";
 
 const baseTheme = createTheme();
 const theme = createTheme({
@@ -39,7 +40,7 @@ const LAYOUT_CONFIG = {
 };
 
 export default function App() {
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const { isDesktop } = useScreenContext();
   const navBarWidth = isDesktop
     ? LAYOUT_CONFIG.navBar.width.desktop
     : LAYOUT_CONFIG.navBar.width.mobile;
@@ -49,7 +50,6 @@ export default function App() {
       <Drawer variant="persistent" open={isDesktop} anchor="left">
         <Box width={navBarWidth}>Persistent drawer content</Box>
       </Drawer>
-
       <Box
         flexGrow={1}
         marginLeft={navBarWidth}
