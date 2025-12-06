@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HttpProtocol from "./components/HttpProtocol";
-import { useScreenContext } from "./hooks";
 
 const baseTheme = createTheme();
 const theme = createTheme({
@@ -26,28 +25,15 @@ const theme = createTheme({
   },
 });
 
-const LAYOUT_CONFIG = {
-  navBar: {
-    width: {
-      desktop: "17rem",
-      mobile: 0,
-    },
-    borderWidth: "0.07rem",
-  },
-  spacing: {
-    top: "1rem",
-  },
-};
-
 export default function App() {
-  const { isDesktop } = useScreenContext();
-  const navBarWidth = isDesktop
-    ? LAYOUT_CONFIG.navBar.width.desktop
-    : LAYOUT_CONFIG.navBar.width.mobile;
-
   return (
     <ThemeProvider theme={theme}>
-      <Box flexGrow={1} marginLeft={navBarWidth} marginTop={"2rem"}>
+      <Box
+        flexGrow={1}
+        display={"flex"}
+        alignContent={"center"}
+        marginTop={"2rem"}
+      >
         <HttpProtocol />
       </Box>
     </ThemeProvider>
