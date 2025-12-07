@@ -7,7 +7,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { HomePageConfigs } from "./HomeConfig.ts";
+import { HomePageConfigs } from "./HomePageConfig.ts";
 
 const Home = () => {
   const handleCardClick = (route: string) => {
