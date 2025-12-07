@@ -14,7 +14,7 @@ export const HomePageConfigs = [
     description:
       "Explains request/response lifecycle, methods, headers, and status codes. Visual flowchart with WWW vs Internet comparison",
     imageUrl: HttpProtocol,
-    route: ROUTES.BLOG_CONTENT,
+    route: `${ROUTES.BLOG}/http-protocol`,
   },
   {
     title: "Http Protocol",
