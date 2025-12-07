@@ -1,17 +1,8 @@
-import { Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import HttpProtocol from "./components/HttpProtocol";
+import Home from "./pages/Home";
 
 const baseTheme = createTheme();
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#FFFFFF",
-    },
-    secondary: {
-      main: "#F5F5F5",
-    },
-  },
   typography: {
     h5: {
       fontSize: "1.2rem",
@@ -28,14 +19,7 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        flexGrow={1}
-        display={"flex"}
-        alignContent={"center"}
-        marginTop={"2rem"}
-      >
-        <HttpProtocol />
-      </Box>
+      <Home />
     </ThemeProvider>
   );
 }
