@@ -1,21 +1,24 @@
 import {
+  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
   Grid,
-  Stack,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { HomePageConfigs } from "./HomePageConfig.ts";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const handleCardClick = (route: string) => {
-    console.log("Navigating to:", route);
+    navigate(route);
   };
 
   return (
-    <Stack spacing={2} direction="column">
+    <Box>
       <Typography
         variant="h4"
         component="h1"
@@ -50,7 +53,7 @@ const Home = () => {
           </Grid>
         ))}
       </Grid>
-    </Stack>
+    </Box>
   );
 };
 
