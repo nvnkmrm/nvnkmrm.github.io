@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
-import HttpProtocol from "../components/HttpProtocol";
+import BlogContent from "../components/BlogContent";
 import { ROUTES } from "./paths";
 
 export const router = createBrowserRouter([
@@ -9,13 +9,8 @@ export const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: ROUTES.BLOG,
-    children: [
-      {
-        path: "http-protocol",
-        element: <HttpProtocol />,
-      },
-    ],
+    path: `${ROUTES.BLOG}/*`,
+    element: <BlogContent />,
   },
   {
     path: "*",

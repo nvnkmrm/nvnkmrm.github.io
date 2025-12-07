@@ -1,5 +1,5 @@
 export const ROUTES = {
   HOME: "/",
   BLOG: "/blog",
-  HTTP_PROTOCOL: "/blog/http-protocol",
+  BLOG_CONTENT: "/blog/blog-content",
 } as const;

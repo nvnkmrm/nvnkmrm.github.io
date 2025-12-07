@@ -8,13 +8,18 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { HomePageConfigs } from "./HomePageConfig.ts";
+import { HomePageConfigs, type HomePageConfig } from "./HomePageConfig.ts";
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const handleCardClick = (route: string) => {
-    navigate(route);
+  const handleCardClick = (config: HomePageConfig) => {
+    navigate(config.route, {
+      state: {
+        title: config.title,
+        imageSrc: config.imageUrl,
+      },
+    });
   };
 
   return (
@@ -31,7 +36,7 @@ const Home = () => {
           <Grid key={`${config.route}-${index}`}>
             <Card sx={{ maxWidth: 345, height: "100%" }}>
               <CardActionArea
-                onClick={() => handleCardClick(config.route)}
+                onClick={() => handleCardClick(config)}
                 sx={{ height: "100%" }}
               >
                 <CardMedia

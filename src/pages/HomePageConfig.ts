@@ -10,38 +10,38 @@ export interface HomePageConfig {
 
 export const HomePageConfigs = [
   {
-    title: "Http Protocol",
+    title: "Hypertext Transfer Protocol",
     description:
       "Explains request/response lifecycle, methods, headers, and status codes. Visual flowchart with WWW vs Internet comparison",
     imageUrl: HttpProtocol,
-    route: ROUTES.HTTP_PROTOCOL,
+    route: ROUTES.BLOG_CONTENT,
   },
   {
     title: "Http Protocol",
     description:
       "Explains request/response lifecycle, methods, headers, and status codes. Visual flowchart with WWW vs Internet comparison",
     imageUrl: HttpProtocol,
-    route: ROUTES.HTTP_PROTOCOL,
+    route: ROUTES.BLOG_CONTENT,
   },
   {
     title: "Http Protocol",
     description:
       "Explains request/response lifecycle, methods, headers, and status codes. Visual flowchart with WWW vs Internet comparison",
     imageUrl: HttpProtocol,
-    route: ROUTES.HTTP_PROTOCOL,
+    route: ROUTES.BLOG_CONTENT,
   },
   {
     title: "Http Protocol",
     description:
       "Explains request/response lifecycle, methods, headers, and status codes. Visual flowchart with WWW vs Internet comparison",
     imageUrl: HttpProtocol,
-    route: ROUTES.HTTP_PROTOCOL,
+    route: ROUTES.BLOG_CONTENT,
   },
   {
     title: "Http Protocol",
     description:
       "Explains request/response lifecycle, methods, headers, and status codes. Visual flowchart with WWW vs Internet comparison",
     imageUrl: HttpProtocol,
-    route: ROUTES.HTTP_PROTOCOL,
+    route: ROUTES.BLOG_CONTENT,
   },
 ];

@@ -1,11 +1,21 @@
 import { Stack, Typography, Box } from "@mui/material";
 import { useMemo } from "react";
-import HttpProtocolSvg from "../../assets/ssl/http_protocol.svg";
+import { useLocation } from "react-router-dom";
 import { useScreenContext } from "../../hooks";
 import * as React from "react";
 
-const HttpProtocol: React.FC = () => {
+interface RouteState {
+  title?: string;
+  imageSrc?: string;
+}
+
+const BlogContent: React.FC = () => {
   const { isMobile, isTablet } = useScreenContext();
+  const location = useLocation();
+  const state = location.state as RouteState;
+
+  const title = state?.title;
+  const imageSrc = state?.imageSrc;
 
   const { contentWidth } = useMemo(() => {
     const width = isMobile ? "90vw" : isTablet ? "80vw" : "65vw";
@@ -32,17 +42,17 @@ const HttpProtocol: React.FC = () => {
           fontSize={20}
           sx={{ width: contentWidth, textAlign: "center" }}
         >
-          HTTP - Hypertext Transfer Protocol
+          {title}
         </Typography>
       </Box>
 
       <img
-        src={HttpProtocolSvg}
+        src={imageSrc}
         style={{ marginTop: "0.2rem", width: contentWidth, height: "100%" }}
-        alt="HTTP Notes"
+        alt={title}
       />
     </Stack>
   );
 };
 
-export default HttpProtocol;
+export default BlogContent;
