@@ -1,7 +1,7 @@
-import HttpProtocol from "../assets/ssl/http_protocol.svg";
-import { ROUTES } from "../routes/paths";
+import HttpProtocol from "../../assets/ssl/http_protocol.svg";
+import { ROUTES } from "../../routes/paths.ts";
 
-export interface HomePageConfig {
+export interface BlogsListConfig {
   title: string;
   description: string;
   imageUrl: string;
