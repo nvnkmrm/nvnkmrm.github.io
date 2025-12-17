@@ -1,9 +1,8 @@
 import {
+  Box,
   Card,
   CardActionArea,
-  CardContent,
   CardMedia,
-  Grid,
   Typography,
 } from "@mui/material";
 import { type BlogsListConfig, HomePageConfigs } from "./blogsListConfig.ts";
@@ -22,33 +21,38 @@ const BlogList = () => {
   };
 
   return (
-    <Grid container spacing={3} sx={{ padding: 2 }} justifyContent="center">
+    <Box sx={{ padding: 2, maxWidth: "50rem", margin: "0 auto" }}>
       {HomePageConfigs.map((config, index) => (
-        <Grid key={`${config.route}-${index}`}>
-          <Card sx={{ maxWidth: 345, height: "100%" }}>
-            <CardActionArea
-              onClick={() => handleCardClick(config)}
-              sx={{ height: "100%" }}
-            >
-              <CardMedia
-                component="img"
-                alt={config.title}
-                height="140"
-                image={config.imageUrl}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {config.title}
-                </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  {config.description}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
+        <Card
+          key={`${config.route}-${index}`}
+          sx={{ marginBottom: "0.5rem", display: "flex" }}
+        >
+          <CardActionArea
+            onClick={() => handleCardClick(config)}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ padding: 2, flex: 1 }}>
+              <Typography gutterBottom variant="h5" component="div">
+                {config.title}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                {config.description}
+              </Typography>
+            </Box>
+            <CardMedia
+              component="img"
+              alt={config.title}
+              sx={{ width: 200, height: 140, objectFit: "cover" }}
+              image={config.imageUrl}
+            />
+          </CardActionArea>
+        </Card>
       ))}
-    </Grid>
+    </Box>
   );
 };
 

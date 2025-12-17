@@ -10,6 +10,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  responsiveFontSizes,
   Slide,
   Toolbar,
   Typography,
@@ -17,21 +18,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import * as React from "react";
+import { useState } from "react";
+import { useScreenContext } from "./hooks";
 
 const baseTheme = createTheme();
-const theme = createTheme({
-  typography: {
-    h5: {
-      fontSize: "1.2rem",
-      "@media (min-width:600px)": {
-        fontSize: "1.5rem",
-      },
-      [baseTheme.breakpoints.up("md")]: {
-        fontSize: "2.1rem",
-      },
-    },
-  },
-});
+const theme = responsiveFontSizes(baseTheme);
 
 interface Props {
   window?: () => Window;
@@ -53,10 +44,10 @@ function HideOnScroll(props: Props) {
 const drawerWidth = 240;
 
 export default function App() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const { isDesktop } = useScreenContext();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(isDesktop);
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setIsDrawerOpen(!isDrawerOpen);
   };
 
   const drawer = (
@@ -120,8 +111,8 @@ export default function App() {
       </HideOnScroll>
 
       <Drawer
-        variant="persistent"
-        open={mobileOpen}
+        variant={isDesktop ? "persistent" : "temporary"}
+        open={isDrawerOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
@@ -136,7 +127,7 @@ export default function App() {
       <Box
         marginTop={"6rem"}
         sx={{
-          marginLeft: mobileOpen ? `${drawerWidth}px` : 0,
+          marginLeft: isDrawerOpen && isDesktop ? `${drawerWidth}px` : 0,
           transition: "margin 0.3s ease",
         }}
       >
