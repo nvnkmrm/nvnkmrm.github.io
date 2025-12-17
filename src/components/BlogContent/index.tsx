@@ -1,4 +1,4 @@
-import { Stack, Typography, Box } from "@mui/material";
+import { Stack, Typography, Box, Divider } from "@mui/material";
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { useScreenContext } from "../../hooks";
@@ -23,28 +23,22 @@ const BlogContent: React.FC = () => {
   }, [isMobile, isTablet]);
 
   return (
-    <Stack alignItems={"center"} spacing={1.5}>
-      <Box
-        sx={{
-          flexGrow: 1,
-          width: contentWidth,
-          height: "3rem",
-          border: "1px solid",
-          borderRadius: "0.5rem",
-          bgcolor: "#678be5",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-      >
+    <Stack alignItems={"center"} spacing={1.5} sx={{ margin: "0 auto" }}>
+      <Box pt={3}>
         <Typography
-          variant="h6"
-          fontSize={20}
-          sx={{ width: contentWidth, textAlign: "center" }}
+          variant="h4"
+          sx={{
+            width: contentWidth,
+            fontWeight: 600,
+            textAlign: "center",
+            letterSpacing: "0.02em",
+          }}
         >
           {title}
         </Typography>
       </Box>
+
+      <Divider sx={{ width: contentWidth }} />
 
       <img
         src={imageSrc}

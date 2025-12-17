@@ -81,7 +81,7 @@ export default function App() {
         <AppBar
           elevation={0}
           sx={{
-            bgcolor: "#fff",
+            bgcolor: "#c6e7bf",
             borderBottom: "1px solid #e0e0e0",
             zIndex: 2000,
           }}
@@ -124,7 +124,7 @@ export default function App() {
       </Drawer>
 
       <Box
-        marginTop={"4rem"}
+        marginTop={"4.5rem"}
         sx={{
           marginLeft: isDrawerOpen && isDesktop ? `${drawerWidth}px` : 0,
           transition: "margin 0.3s ease",

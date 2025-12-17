@@ -7,10 +7,11 @@ import {
 } from "@mui/material";
 import { type BlogsListConfig, HomePageConfigs } from "./blogsListConfig.ts";
 import { useNavigate } from "react-router-dom";
+import { useScreenContext } from "../../hooks/useScreenContext.ts";
 
 const BlogList = () => {
   const navigate = useNavigate();
-
+  const { isDesktop, isTablet } = useScreenContext();
   const handleCardClick = (config: BlogsListConfig) => {
     navigate(config.route, {
       state: {
@@ -21,7 +22,7 @@ const BlogList = () => {
   };
 
   return (
-    <Box sx={{ padding: 2, maxWidth: "53rem", margin: "0 auto" }}>
+    <Box sx={{ maxWidth: "50rem", margin: "0 auto" }}>
       {HomePageConfigs.map((config, index) => (
         <Card
           key={`${config.route}-${index}`}
@@ -43,12 +44,14 @@ const BlogList = () => {
                 {config.description}
               </Typography>
             </Box>
-            <CardMedia
-              component="img"
-              alt={config.title}
-              sx={{ width: 200, height: 140, objectFit: "cover" }}
-              image={config.imageUrl}
-            />
+            {(isDesktop || isTablet) && (
+              <CardMedia
+                component="img"
+                alt={config.title}
+                sx={{ width: 200, height: 140, objectFit: "cover" }}
+                image={config.imageUrl}
+              />
+            )}
           </CardActionArea>
         </Card>
       ))}
