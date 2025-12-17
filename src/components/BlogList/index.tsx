@@ -21,7 +21,7 @@ const BlogList = () => {
   };
 
   return (
-    <Box sx={{ padding: 2, maxWidth: "50rem", margin: "0 auto" }}>
+    <Box sx={{ padding: 2, maxWidth: "53rem", margin: "0 auto" }}>
       {HomePageConfigs.map((config, index) => (
         <Card
           key={`${config.route}-${index}`}

@@ -97,7 +97,6 @@ export default function App() {
               <MenuIcon />
             </IconButton>
             <Typography
-              fontFamily={"fantasy"}
               fontStyle={"normal"}
               fontWeight={"bold"}
               variant="h6"
@@ -125,7 +124,7 @@ export default function App() {
       </Drawer>
 
       <Box
-        marginTop={"6rem"}
+        marginTop={"4rem"}
         sx={{
           marginLeft: isDrawerOpen && isDesktop ? `${drawerWidth}px` : 0,
           transition: "margin 0.3s ease",
