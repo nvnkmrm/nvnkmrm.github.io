@@ -25,7 +25,7 @@ const drawerWidth = 240;
 
 export default function App() {
   const { isDesktop } = useScreenContext();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(isDesktop);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const handleDrawerToggle = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
