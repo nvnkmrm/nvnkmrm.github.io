@@ -11,35 +11,15 @@ import {
   ListItemButton,
   ListItemText,
   responsiveFontSizes,
-  Slide,
   Toolbar,
   Typography,
-  useScrollTrigger,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import * as React from "react";
 import { useState } from "react";
 import { useScreenContext } from "./hooks";
 
 const baseTheme = createTheme();
 const theme = responsiveFontSizes(baseTheme);
-
-interface Props {
-  window?: () => Window;
-  children?: React.ReactElement<unknown>;
-}
-function HideOnScroll(props: Props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children ?? <div />}
-    </Slide>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -77,37 +57,35 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <HideOnScroll>
-        <AppBar
-          elevation={0}
-          sx={{
-            bgcolor: "#c6e7bf",
-            borderBottom: "1px solid #e0e0e0",
-            zIndex: 2000,
-          }}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, color: "#000" }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              fontStyle={"normal"}
-              fontWeight={"bold"}
-              variant="h6"
-              color={"#000"}
-              component="div"
-            >
-              Tech Notes By Naveen
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
+      <AppBar
+        elevation={0}
+        sx={{
+          bgcolor: "#c6e7bf",
+          borderBottom: "1px solid #e0e0e0",
+          zIndex: 2000,
+        }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, color: "#000" }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            fontStyle={"normal"}
+            fontWeight={"bold"}
+            variant="h6"
+            color={"#000"}
+            component="div"
+          >
+            Tech Notes By Naveen
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
       <Drawer
         variant={isDesktop ? "persistent" : "temporary"}
