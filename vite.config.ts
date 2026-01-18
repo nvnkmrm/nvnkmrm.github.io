@@ -9,4 +9,19 @@ export default defineConfig({
     outDir: "build",
     emptyOutDir: true,
   },
+  define: {
+    global: "globalThis",
+  },
+  resolve: {
+    alias: {
+      buffer: "buffer",
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: "globalThis",
+      },
+    },
+  },
 });

@@ -1,0 +1,88 @@
+/* Syntax Highlighting Theme - GitHub Dark */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  color: #e6edf3;
+  background: #0d1117;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #ff7b72;
+}
+
+.hljs-string,
+.hljs-attr,
+.hljs-template-variable,
+.hljs-variable {
+  color: #a5d6ff;
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #79c0ff;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #d2a8ff;
+  font-weight: bold;
+}
+
+.hljs-attribute {
+  color: #79c0ff;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffa657;
+}
+
+.hljs-function {
+  color: #d2a8ff;
+}
+
+.hljs-params {
+  color: #e6edf3;
+}
+
+.hljs-meta {
+  color: #a5d6ff;
+}
+
+.hljs-tag {
+  color: #7ee787;
+}
+
+.hljs-name {
+  color: #7ee787;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+.hljs-deletion {
+  background-color: #ff7b7220;
+  color: #ff7b72;
+}
+
+.hljs-addition {
+  background-color: #7ee78720;
+  color: #7ee787;
+}
