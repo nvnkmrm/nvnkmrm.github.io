@@ -4,8 +4,7 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import RssFeedIcon from "@mui/icons-material/RssFeed";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 /**
  * Site footer with copyright and links using MUI components
@@ -63,7 +62,7 @@ export default function Footer() {
                 "&:hover": { color: "primary.main" },
               }}
             >
-              <TwitterIcon fontSize="small" />
+              <LinkedInIcon fontSize="small" />
               LinkedIn
             </Link>
           </Stack>
