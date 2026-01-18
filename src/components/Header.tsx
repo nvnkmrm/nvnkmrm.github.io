@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import CodeIcon from "@mui/icons-material/Code";
+import LeafIcon from "../assets/leaf.svg?react";
 
 /**
  * Site header with navigation using MUI components
@@ -23,7 +23,7 @@ export default function Header() {
     <AppBar position="sticky" color="default" elevation={0}>
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ py: 1 }}>
-          <CodeIcon sx={{ mr: 1, color: "primary.main" }} />
+          <LeafIcon style={{ width: 32, height: 32, marginRight: 8 }} />
           <Typography
             variant="h6"
             component={RouterLink}
