@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import BlogLayout from "../layouts/BlogLayout";
 import HomePage from "../pages/HomePage";
@@ -9,10 +9,10 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 /**
  * Application router configuration
- * Uses hash-based routing for GitHub Pages compatibility
- * URLs will be: /#/, /#/blog, /#/blog/post-slug
+ * Uses browser-based routing with clean URLs
+ * URLs will be: /, /blog, /blog/post-slug, /about
  */
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
