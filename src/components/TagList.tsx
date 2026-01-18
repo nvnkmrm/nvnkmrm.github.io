@@ -1,18 +1,19 @@
+import Stack from "@mui/material/Stack";
+import Chip from "@mui/material/Chip";
+
 interface Props {
   tags: string[];
 }
 
 /**
- * Display a list of tags
+ * Display a list of tags using MUI Chips
  */
 export default function TagList({ tags }: Props) {
   return (
-    <div className="tag-list">
+    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
       {tags.map((tag) => (
-        <span key={tag} className="tag">
-          {tag}
-        </span>
+        <Chip key={tag} label={tag} size="small" />
       ))}
-    </div>
+    </Stack>
   );
 }

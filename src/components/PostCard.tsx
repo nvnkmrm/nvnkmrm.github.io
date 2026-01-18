@@ -1,37 +1,94 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import Link from "@mui/material/Link";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import type { BlogPostPreview } from "../types/blog";
 import { formatDate } from "../utils/formatDate";
-import TagList from "./TagList";
 
 interface Props {
   post: BlogPostPreview;
 }
 
 /**
- * Blog post card component for list views
+ * Blog post card component for list views using MUI
  */
 export default function PostCard({ post }: Props) {
   return (
-    <article className="post-card">
-      <div className="post-card-header">
-        <h2>
-          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-        </h2>
-        <div className="post-meta">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <span className="separator">•</span>
-          <span className="reading-time">{post.readingTime} min read</span>
-        </div>
-      </div>
+    <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h5"
+          component="h2"
+          gutterBottom
+          sx={{ fontWeight: 600 }}
+        >
+          <Link
+            component={RouterLink}
+            to={`/blog/${post.slug}`}
+            underline="hover"
+            color="text.primary"
+            sx={{
+              "&:hover": {
+                color: "primary.main",
+              },
+            }}
+          >
+            {post.title}
+          </Link>
+        </Typography>
 
-      <p className="post-description">{post.description}</p>
+        <Stack
+          direction="row"
+          spacing={1}
+          alignItems="center"
+          sx={{ mb: 2, color: "text.secondary" }}
+        >
+          <Typography variant="body2" component="time" dateTime={post.date}>
+            {formatDate(post.date)}
+          </Typography>
+          <Typography variant="body2">•</Typography>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <AccessTimeIcon fontSize="small" />
+            <Typography variant="body2">{post.readingTime} min read</Typography>
+          </Box>
+        </Stack>
 
-      <div className="post-card-footer">
-        <TagList tags={post.tags} />
-        <Link to={`/blog/${post.slug}`} className="read-more">
+        <Typography variant="body1" color="text.secondary" paragraph>
+          {post.description}
+        </Typography>
+
+        <Stack
+          direction="row"
+          spacing={1}
+          flexWrap="wrap"
+          useFlexGap
+          sx={{ mb: 2 }}
+        >
+          {post.tags.map((tag) => (
+            <Chip key={tag} label={tag} size="small" />
+          ))}
+        </Stack>
+
+        <Link
+          component={RouterLink}
+          to={`/blog/${post.slug}`}
+          underline="none"
+          sx={{
+            color: "primary.main",
+            fontWeight: 600,
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
           Read more →
         </Link>
-      </div>
-    </article>
+      </CardContent>
+    </Card>
   );
 }

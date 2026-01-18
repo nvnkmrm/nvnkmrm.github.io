@@ -1,37 +1,89 @@
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import RssFeedIcon from "@mui/icons-material/RssFeed";
+
 /**
- * Site footer with copyright and links
+ * Site footer with copyright and links using MUI components
  */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <p className="copyright">
+    <Box
+      component="footer"
+      sx={{
+        py: 4,
+        px: 2,
+        mt: "auto",
+        backgroundColor: "background.paper",
+        borderTop: 1,
+        borderColor: "divider",
+      }}
+    >
+      <Container maxWidth="lg">
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={2}
+        >
+          <Typography variant="body2" color="text.secondary">
             © {currentYear} DevBlog. Built with React, TypeScript, and Vite.
-          </p>
-          <div className="footer-links">
-            <a
+          </Typography>
+          <Stack direction="row" spacing={3}>
+            <Link
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
+              color="text.secondary"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.5,
+                "&:hover": { color: "primary.main" },
+              }}
             >
+              <GitHubIcon fontSize="small" />
               GitHub
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
+              color="text.secondary"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.5,
+                "&:hover": { color: "primary.main" },
+              }}
             >
+              <TwitterIcon fontSize="small" />
               Twitter
-            </a>
-            <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link
+              href="/rss.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="text.secondary"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.5,
+                "&:hover": { color: "primary.main" },
+              }}
+            >
+              <RssFeedIcon fontSize="small" />
               RSS
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+            </Link>
+          </Stack>
+        </Stack>
+      </Container>
+    </Box>
   );
 }
