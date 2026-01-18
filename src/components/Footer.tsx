@@ -33,11 +33,11 @@ export default function Footer() {
           spacing={2}
         >
           <Typography variant="body2" color="text.secondary">
-            © {currentYear} DevBlog. Built with React, TypeScript, and Vite.
+            © {currentYear} Naveen’s TechNote. All rights reserved.
           </Typography>
           <Stack direction="row" spacing={3}>
             <Link
-              href="https://github.com"
+              href="https://github.com/nvnkmrm"
               target="_blank"
               rel="noopener noreferrer"
               color="text.secondary"
@@ -52,7 +52,7 @@ export default function Footer() {
               GitHub
             </Link>
             <Link
-              href="https://twitter.com"
+              href="https://www.linkedin.com/in/naveen-kumar-5a6960119/"
               target="_blank"
               rel="noopener noreferrer"
               color="text.secondary"
@@ -64,22 +64,7 @@ export default function Footer() {
               }}
             >
               <TwitterIcon fontSize="small" />
-              Twitter
-            </Link>
-            <Link
-              href="/rss.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              color="text.secondary"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 0.5,
-                "&:hover": { color: "primary.main" },
-              }}
-            >
-              <RssFeedIcon fontSize="small" />
-              RSS
+              LinkedIn
             </Link>
           </Stack>
         </Stack>
