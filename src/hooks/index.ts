@@ -1,1 +1,0 @@
-export { useScreenContext } from "./useScreenContext";
