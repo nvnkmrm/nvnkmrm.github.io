@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="sticky" color="default" elevation={1}>
+    <AppBar position="sticky" color="default" elevation={0}>
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ py: 1 }}>
           <CodeIcon sx={{ mr: 1, color: "primary.main" }} />

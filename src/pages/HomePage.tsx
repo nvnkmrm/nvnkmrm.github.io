@@ -23,7 +23,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Box
         sx={{
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          background: "linear-gradient(135deg, #3CAB6A 33%, #08B3E5 100%)",
           color: "white",
           py: { xs: 8, md: 12 },
           textAlign: "center",
