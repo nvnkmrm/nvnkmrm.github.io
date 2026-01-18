@@ -36,7 +36,7 @@ export default function HomePage() {
             gutterBottom
             sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }}
           >
-            Welcome to My Developer Blog
+            Welcome to Naveen’s TechNote
           </Typography>
           <Typography
             variant="h5"
@@ -46,7 +46,7 @@ export default function HomePage() {
               fontWeight: 400,
             }}
           >
-            Insights on React, TypeScript, and Modern Web Development
+            A personal blog on learning from software development.
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}

@@ -38,7 +38,7 @@ export default function Header() {
               },
             }}
           >
-            DevBlog
+            Naveen’s TechNote
           </Typography>
 
           <Box sx={{ display: "flex", gap: 1 }}>
