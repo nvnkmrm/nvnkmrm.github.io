@@ -7,7 +7,7 @@ import { calculateReadingTime } from "../utils/readingTime";
  * Load all blog posts at build time using Vite's glob import
  * This creates a static index of all markdown files
  */
-const blogModules = import.meta.glob<string>("../content/blog/*.md", {
+const blogModules = import.meta.glob<string>("../content/blog/**/*.md", {
   query: "?raw",
   import: "default",
   eager: true,
