@@ -1,7 +1,7 @@
 ---
 title: "Clean Code Principles Every Developer Should Know"
 description: "Explore essential clean code principles that make your codebase maintainable, testable, and enjoyable to work with."
-date: "2024-10-15"
+date: "2025-10-15"
 tags: ["Clean Code", "Best Practices", "Software Engineering", "Code Quality"]
 author: "Naveen Kumar"
 ---

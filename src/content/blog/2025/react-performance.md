@@ -1,7 +1,7 @@
 ---
 title: "Optimizing React Performance: A Deep Dive"
 description: "Learn advanced techniques to optimize React application performance, from memoization to code splitting and lazy loading."
-date: "2024-11-20"
+date: "2025-11-20"
 tags: ["React", "Performance", "JavaScript", "Optimization"]
 author: "Naveen Kumar"
 ---
