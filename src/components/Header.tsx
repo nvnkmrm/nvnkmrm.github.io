@@ -20,7 +20,17 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="sticky" color="default" elevation={0}>
+    <AppBar
+      position="sticky"
+      color="default"
+      elevation={0}
+      sx={{
+        bgcolor: "rgba(255, 255, 255, 0.8)",
+        backdropFilter: "blur(10px)",
+        borderBottom: "1px solid",
+        borderColor: "divider",
+      }}
+    >
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ py: 1 }}>
           <LeafIcon style={{ width: 32, height: 32, marginRight: 8 }} />
