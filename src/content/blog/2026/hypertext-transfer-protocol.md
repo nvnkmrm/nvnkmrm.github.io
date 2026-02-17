@@ -10,7 +10,7 @@ author: "Naveen Kumar"
 
 Before we dive into HTTP, we will decode the What is HTTP and understand the meaning of from it.
 
-Hypertext
+### Hypertext
 
 The term “hyper” means “beyond.” Hypertext extends beyond traditional linear text structure. In standard text formats such as books or newspapers, information is arranged in a linear, sequential manner. Readers must go through the content page by page to access information.
 
@@ -20,9 +20,9 @@ A practical implementation of hypertext can be seen on webpages. Through hyperli
 
 A webpage typically represents an HTML document (the most common form), but it can also represent other types of web resources such as PDF files, images (JPEG, PNG), videos, JSON responses, or any content type that a browser is capable of rendering.
 
-Transfer
+### Transfer
 
-Transfering the data from one system to another system over a network.
+Transferring the data from one system to another system over a network.
 
 # References
 
