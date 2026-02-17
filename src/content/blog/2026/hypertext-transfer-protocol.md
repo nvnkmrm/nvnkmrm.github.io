@@ -18,6 +18,12 @@ Hypertext, however, represents a non-linear arrangement of information. It allow
 
 A practical implementation of hypertext can be seen on webpages. Through hyperlinks, readers can navigate to other webpages, documents, images, or videos instantly.
 
+A webpage typically represents an HTML document (the most common form), but it can also represent other types of web resources such as PDF files, images (JPEG, PNG), videos, JSON responses, or any content type that a browser is capable of rendering.
+
+Transfer
+
+Transfering the data from one system to another system over a network.
+
 # References
 
 [Hypertext](https://en.wikipedia.org/wiki/Hypertext)
