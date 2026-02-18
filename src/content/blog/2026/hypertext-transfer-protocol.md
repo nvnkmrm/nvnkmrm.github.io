@@ -28,6 +28,10 @@ Transferring the data from one system to another system over a network.
 
 A protocol is a set of rules, conventions, and data structures that define how data is communicated between networked devices. Devices connected to a network may use different hardware and software. Protocols enable them to communicate with each other regardless of these differences. In simple terms, a protocol acts like a common language that allows different networked devices to understand and exchange information.
 
+## What is HTTP ?
+
+From the above understanding, we can interpret that HTTP defines a set of rules for transferring hypertext between devices over a network.
+
 # References
 
 - [Hypertext - Wiki](https://en.wikipedia.org/wiki/Hypertext)
