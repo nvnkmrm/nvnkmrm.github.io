@@ -24,6 +24,13 @@ A webpage typically represents an HTML document (the most common form), but it c
 
 Transferring the data from one system to another system over a network.
 
+### Protocol
+
+A protocol is a set of rules, conventions, and data structures that define how data is communicated between networked devices. Devices connected to a network may use different hardware and software. Protocols enable them to communicate with each other regardless of these differences. In simple terms, a protocol acts like a common language that allows different networked devices to understand and exchange information.
+
 # References
 
-[Hypertext](https://en.wikipedia.org/wiki/Hypertext)
+- [Hypertext - Wiki](https://en.wikipedia.org/wiki/Hypertext)
+- [Hypertext - GFG](https://www.geeksforgeeks.org/websites-apps/what-is-hypertext/)
+- [Protocol - CloudFare](https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-protocol/)
+- [Protocol - Comptia](https://www.comptia.org/en-us/blog/what-is-a-network-protocol/)
