@@ -8,7 +8,7 @@ author: "Naveen Kumar"
 
 # Hypertext Transfer Protocol (HTTP)
 
-Before we dive into HTTP, we will decode the What is HTTP and understand the meaning of from it.
+Before diving into HTTP, let’s first break down what HTTP stands for and understand what it actually means.
 
 ### Hypertext
 
