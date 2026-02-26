@@ -32,6 +32,16 @@ A protocol is a set of rules, conventions, and data structures that define how d
 
 From the above understanding, we can interpret that HTTP defines a set of rules for transferring hypertext between devices over a network.
 
+It is important to learn about the World Wide Web (WWW) and the Internet. This helps in understanding the bigger picture and where HTTP fits in.
+
+### World Wide Web and Internet
+
+The World Wide Web (WWW) is a system of interconnected resources such as documents, videos, images, and webpages that are accessed through the Internet. These resources are linked to each other using hyperlinks, allowing users to navigate seamlessly between different pieces of information.
+
+The Internet is the global network of physical infrastructure that connects computers and other devices across the world. It provides the underlying connectivity that enables data to be transmitted between systems.
+
+The World Wide Web is not the same as the Internet, but rather a way of using this infrastructure to access and organize information. In simple terms, the Internet is the network that connects devices, while the World Wide Web is a system that uses this network to deliver and navigate information.
+
 # References
 
 - [Hypertext - Wiki](https://en.wikipedia.org/wiki/Hypertext)
