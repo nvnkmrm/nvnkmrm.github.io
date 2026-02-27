@@ -8,7 +8,9 @@ author: "Naveen Kumar"
 
 # Hypertext Transfer Protocol (HTTP)
 
-Before diving into HTTP, let’s first break down what HTTP stands for and understand what it actually means.
+HTTP (Hypertext Transfer Protocol) is a protocol used to transfer hypermedia resources such as HTML documents, images, videos, and APIs between a client and a server over a network.
+
+## Breakdown of HTTP
 
 ### Hypertext
 
@@ -30,9 +32,15 @@ A protocol is a set of rules, conventions, and data structures that define how d
 
 ## What is HTTP ?
 
-From the above understanding, we can interpret that HTTP defines a set of rules for transferring hypertext between devices over a network.
+HTTP is a client-server protocol that defines how requests and responses are structured and exchanged over the web.
 
-It is important to learn about the World Wide Web (WWW) and the Internet. This helps in understanding the bigger picture and where HTTP fits in.
+- A client (such as a browser or mobile app) sends an HTTP request
+- A server processes the request
+- The server returns an HTTP response
+
+This request-response cycle forms the foundation of communication on the web.
+
+## How HTTP Fits in the Web
 
 ### World Wide Web and Internet
 
