@@ -22,7 +22,7 @@ A practical implementation of hypertext can be seen on webpages. Through hyperli
 
 ### Transfer
 
-Transferring the data from one system to another system over a network.
+Transfer refers to the process of moving data from one system to another over a network. It ensures that information is transmitted reliably from a source to its intended destination.
 
 ### Protocol
 
