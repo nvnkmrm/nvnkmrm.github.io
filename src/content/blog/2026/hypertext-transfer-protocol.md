@@ -20,8 +20,6 @@ Hypertext, however, represents a non-linear arrangement of information. It allow
 
 A practical implementation of hypertext can be seen on webpages. Through hyperlinks, readers can navigate to other webpages, documents, images, or videos instantly.
 
-A webpage typically represents an HTML document (the most common form), but it can also represent other types of web resources such as PDF files, images (JPEG, PNG), videos, JSON responses, or any content type that a browser is capable of rendering.
-
 ### Transfer
 
 Transferring the data from one system to another system over a network.
@@ -49,6 +47,16 @@ The World Wide Web (WWW) is a system of interconnected resources such as documen
 The Internet is the global network of physical infrastructure that connects computers and other devices across the world. It provides the underlying connectivity that enables data to be transmitted between systems.
 
 The World Wide Web is not the same as the Internet, but rather a way of using this infrastructure to access and organize information. In simple terms, the Internet is the network that connects devices, while the World Wide Web is a system that uses this network to deliver and navigate information.
+
+## Types of Resources Transferred via HTTP
+
+HTTP can transfer different types of resources, including:
+
+- HTML documents (webpages)
+- Images (JPEG, PNG)
+- Videos
+- PDF files
+- JSON responses (APIs)
 
 # References
 
