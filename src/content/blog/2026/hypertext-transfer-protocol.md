@@ -30,6 +30,8 @@ A protocol is a set of rules, conventions, and data structures that define how d
 
 ## What is HTTP ?
 
+HTTP is the primary protocol that enables the WWW to function, governing how resources are requested and delivered. HTTP operates at Layer 7 (Application Layer) of the OSI model. From the application perspective, communication begins at the application layer — the client generates an HTTP request here, which is then passed down through the lower layers (Transport, Network, etc.) for transmission.
+
 HTTP is a client-server protocol that defines how requests and responses are structured and exchanged over the web.
 
 - A client (such as a browser or mobile app) sends an HTTP request
