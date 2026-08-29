@@ -46,3 +46,7 @@ var capitalCities = new Dictionary<string, string>();
 capitalCities.Add("Japan", "Tokyo");
 capitalCities["France"] = "Paris";
 ```
+
+Class API is a interface that defines the contract on how to use the data structure, it defines what input we pass and what out we can expect.
+
+Class API implementation define internal detail of the data structure. This is where actual operation takes place. Implementation does the heavy lifting by handling intricate details of the algorithm.
