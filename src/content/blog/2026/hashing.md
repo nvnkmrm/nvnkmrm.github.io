@@ -24,7 +24,7 @@ Modern programming languages ships with most data structure implementation in bu
 
 Programming languages exposes the data structure in the form API class. We can import the library (if it not come out of the box or unlike python), instantiate the class, call the method using the object.
 
-###Examples
+### Examples
 
 **Python**
 
