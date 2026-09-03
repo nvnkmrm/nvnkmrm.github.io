@@ -114,3 +114,11 @@ Sum = 400
 
 Final value = 0
 ```
+
+# Why we need hash function ?
+
+With array we have an limitation of indicies needing to be an integer and is a fixed size. By using the hashing, it break the barrier of index needing to be a integer. Hash function can convert keys of any type to integer.
+
+When hash function combined with array it creates the hash table or hash map.
+
+Hash map creates the
