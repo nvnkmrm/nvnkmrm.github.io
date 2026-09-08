@@ -6,64 +6,347 @@ tags: ["Network", "Computer Network", "Protocol"]
 author: "Naveen Kumar"
 ---
 
+---
+
 # Hypertext Transfer Protocol (HTTP)
 
-HTTP (Hypertext Transfer Protocol) is a protocol used to transfer hypermedia resources such as HTML documents, images, videos, and APIs between a client and a server over a network.
+HTTP (Hypertext Transfer Protocol) is an application-layer protocol used for communication between clients and servers over a network.
 
-## Breakdown of HTTP
+It defines how a client can **request a resource or perform an operation** and how a server can **respond to that request**.
 
-### Hypertext
+HTTP is commonly used to exchange resources and their representations, such as HTML documents, images, videos, PDF files, and JSON data used by APIs.
 
-The term “hyper” means “beyond.” Hypertext extends beyond traditional linear text structure. In standard text formats such as books or newspapers, information is arranged in a linear, sequential manner. Readers must go through the content page by page to access information.
+At a high level, HTTP follows a **request-response model**:
 
-Hypertext, however, represents a non-linear arrangement of information. It allows text to contain references (links) to other resources. Readers can navigate non-sequentially, jumping directly to related information instead of reading everything in order. This creates a network of interconnected information rather than a single linear document.
+```text
+Client
+   |
+   | HTTP Request
+   ↓
+Server
+   |
+   | HTTP Response
+   ↓
+Client
+```
 
-A practical implementation of hypertext can be seen on webpages. Through hyperlinks, readers can navigate to other webpages, documents, images, or videos instantly.
+# Breakdown of HTTP
 
-### Transfer
+The name **Hypertext Transfer Protocol** can be understood by breaking it into three parts:
 
-Transfer refers to the process of moving data from one system to another over a network. It ensures that information is transmitted reliably from a source to its intended destination.
+- Hypertext
+- Transfer
+- Protocol
 
-### Protocol
+## Hypertext
 
-A protocol is a set of rules, conventions, and data structures that define how data is communicated between networked devices. Devices connected to a network may use different hardware and software. Protocols enable them to communicate with each other regardless of these differences. In simple terms, a protocol acts like a common language that allows different networked devices to understand and exchange information.
+The term **"hyper"** means "beyond."
 
-## What is HTTP ?
+Traditional text is generally organized in a linear or sequential structure. For example, when reading a book, we typically move from one page to the next.
 
-HTTP is the primary protocol that enables the WWW to function, governing how resources are requested and delivered. HTTP operates at Layer 7 (Application Layer) of the OSI model. From the application perspective, communication begins at the application layer — the client generates an HTTP request here, which is then passed down through the lower layers (Transport, Network, etc.) for transmission.
+Hypertext provides a non-linear way of organizing information. It allows a piece of text to contain references, commonly called **hyperlinks**, to other resources.
 
-HTTP is a client-server protocol that defines how requests and responses are structured and exchanged over the web.
+Instead of reading information sequentially, a reader can follow a link and jump directly to related information.
 
-- A client (such as a browser or mobile app) sends an HTTP request
-- A server processes the request
-- The server returns an HTTP response
+For example:
 
-This request-response cycle forms the foundation of communication on the web.
+```text
+Webpage A
+   |
+   | hyperlink
+   ↓
+Webpage B
+   |
+   | hyperlink
+   ↓
+Webpage C
+```
 
-## How HTTP Fits in the Web
+This creates a network of interconnected resources rather than a single linear document.
 
-### World Wide Web and Internet
+A practical implementation of hypertext can be seen on webpages. A hyperlink can take us from one webpage to another, or to another resource such as a document, image, or video.
 
-The World Wide Web (WWW) is a system of interconnected resources such as documents, videos, images, and webpages that are accessed through the Internet. These resources are linked to each other using hyperlinks, allowing users to navigate seamlessly between different pieces of information.
+The **World Wide Web** is built around this concept of interconnected resources.
 
-The Internet is the global network of physical infrastructure that connects computers and other devices across the world. It provides the underlying connectivity that enables data to be transmitted between systems.
+## Transfer
 
-The World Wide Web is not the same as the Internet, but rather a way of using this infrastructure to access and organize information. In simple terms, the Internet is the network that connects devices, while the World Wide Web is a system that uses this network to deliver and navigate information.
+**Transfer** refers to the exchange of data between systems over a network.
 
-## Types of Resources Transferred via HTTP
+In the context of HTTP, a client and server exchange HTTP messages.
 
-HTTP can transfer different types of resources, including:
+For example:
 
-- HTML documents (webpages)
-- Images (JPEG, PNG)
+```text
+Client → HTTP Request → Server
+
+Client ← HTTP Response ← Server
+```
+
+The request may contain information such as:
+
+- Which resource the client wants
+- The HTTP method
+- Headers
+- Optional request data
+
+The response may contain:
+
+- A status code
+- Response headers
+- The requested representation or other response data
+
+It is important to note that HTTP itself does not provide all aspects of reliable network delivery.
+
+For example, HTTP/1.1 and HTTP/2 commonly operate over TCP, while HTTP/3 operates over QUIC. The underlying transport provides mechanisms such as reliable delivery where applicable.
+
+Therefore, HTTP primarily defines **how application-level communication is structured**, rather than being responsible for every aspect of network transmission.
+
+## Protocol
+
+A **protocol** is a set of rules, conventions, and message formats that define how systems communicate.
+
+Devices connected to a network may use different hardware, operating systems, and software. A common protocol allows these systems to communicate using a shared set of rules.
+
+In simple terms, a protocol acts like a **common language** between communicating systems.
+
+For example, HTTP defines rules for:
+
+- How requests are structured
+- How responses are structured
+- What different methods mean
+- How status codes communicate the result of a request
+- How metadata is represented using headers
+
+Because both the client and server understand these rules, they can communicate even when they are built using completely different technologies.
+
+# What Is HTTP?
+
+HTTP is an **application-layer protocol** that defines how clients and servers communicate.
+
+HTTP is one of the fundamental protocols used by the **World Wide Web**.
+
+From the perspective of the OSI model, HTTP operates at **Layer 7 — the Application Layer**.
+
+A browser, mobile application, or backend service can create an HTTP request at the application layer. The request is then passed to lower layers of the networking stack for transmission across the network.
+
+A simplified view looks like this:
+
+```text
+Application Layer
+       |
+       | HTTP
+       ↓
+Transport Layer
+       |
+       | TCP / QUIC
+       ↓
+Network Layer
+       |
+       | IP
+       ↓
+Data Link / Physical
+```
+
+The exact networking stack depends on the HTTP version and the underlying network technologies.
+
+HTTP follows a **client-server model**.
+
+The basic communication flow is:
+
+1. A client sends an HTTP request.
+2. The server receives and processes the request.
+3. The server sends an HTTP response.
+4. The client processes the response.
+
+For example:
+
+```text
+Client                         Server
+  |                              |
+  |  HTTP Request                |
+  |----------------------------->|
+  |                              |
+  |       Process Request        |
+  |                              |
+  |  HTTP Response               |
+  |<-----------------------------|
+  |                              |
+```
+
+This request-response model forms the foundation of HTTP communication.
+
+# How HTTP Fits Into the Web
+
+## World Wide Web and Internet
+
+The **Internet** and the **World Wide Web (WWW)** are related but are not the same thing.
+
+The **Internet** is a global network of interconnected networks that provides connectivity between computers, servers, phones, and other devices.
+
+The **World Wide Web** is a system of interconnected resources that is built on top of the Internet.
+
+These resources can include:
+
+- Webpages
+- Documents
+- Images
 - Videos
-- PDF files
-- JSON responses (APIs)
+- Other web resources
+
+Resources on the Web can be connected through hyperlinks, allowing users to navigate from one resource to another.
+
+A simplified way to think about the relationship is:
+
+```text
+World Wide Web
+       |
+       | uses
+       ↓
+     HTTP
+       |
+       | operates over
+       ↓
+ Internet
+       |
+       ↓
+Underlying network infrastructure
+```
+
+The Internet provides the connectivity, while the Web provides a system for accessing and linking resources using technologies such as HTTP, URLs, HTML, and web browsers.
+
+Therefore:
+
+> **The Internet is the network infrastructure, while the Web is a system of interconnected resources that uses that infrastructure.**
+
+HTTP is one of the important protocols that enables communication on the Web.
+
+# Types of Resources Transferred via HTTP
+
+HTTP can be used to exchange many different types of data.
+
+Examples include:
+
+- **HTML documents** — used to construct webpages
+- **Images** — JPEG, PNG, WebP, SVG, etc.
+- **Videos** — MP4 and other formats
+- **PDF files**
+- **JSON data** — commonly used by APIs
+- **Plain text**
+- **CSS and JavaScript files**
+
+The type of content being exchanged can be described using HTTP headers.
+
+For example:
+
+```text
+Content-Type: application/json
+```
+
+This tells the client that the response contains JSON data.
+
+Another example:
+
+```text
+Content-Type: text/html
+```
+
+This indicates that the response contains HTML.
+
+# HTTP Request and Response
+
+The request-response model is at the heart of HTTP.
+
+A simplified HTTP request can look like:
+
+```http
+GET /users/123 HTTP/1.1
+Host: example.com
+Accept: application/json
+```
+
+The client is essentially saying:
+
+> "Give me the representation of the resource at `/users/123`."
+
+The server may respond with:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "id": 123,
+    "name": "John"
+}
+```
+
+The response contains:
+
+- **Status code** — `200 OK`
+- **Headers** — such as `Content-Type`
+- **Response body** — the actual data
+
+This simple exchange demonstrates one of the fundamental ideas behind HTTP:
+
+```text
+Client
+  |
+  | GET /users/123
+  |
+  ↓
+Server
+  |
+  | 200 OK
+  | application/json
+  | { ... }
+  ↓
+Client
+```
+
+# Summary
+
+HTTP is an **application-layer communication protocol** used extensively by the World Wide Web.
+
+The name can be understood as:
+
+```text
+Hypertext
+    ↓
+Interconnected resources
+
+Transfer
+    ↓
+Exchange of data between systems
+
+Protocol
+    ↓
+Rules for communication
+```
+
+HTTP uses a client-server request-response model:
+
+```text
+Client
+   ↓
+HTTP Request
+   ↓
+Server
+   ↓
+HTTP Response
+   ↓
+Client
+```
+
+HTTP can be used to exchange many types of resources and data, including HTML, images, videos, documents, and JSON.
+
+Understanding HTTP is fundamental to understanding how browsers, web applications, APIs, and distributed systems communicate.
 
 # References
 
-- [Hypertext - Wiki](https://en.wikipedia.org/wiki/Hypertext)
-- [Hypertext - GFG](https://www.geeksforgeeks.org/websites-apps/what-is-hypertext/)
-- [Protocol - CloudFare](https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-protocol/)
-- [Protocol - Comptia](https://www.comptia.org/en-us/blog/what-is-a-network-protocol/)
-- [WWW - GFG](https://www.geeksforgeeks.org/computer-networks/world-wide-web-www/)
+- [Hypertext - Wikipedia](https://en.wikipedia.org/wiki/Hypertext)
+- [Hypertext - GeeksforGeeks](https://www.geeksforgeeks.org/websites-apps/what-is-hypertext/)
+- [Network Protocol - Cloudflare](https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-protocol/)
+- [Network Protocol - CompTIA](https://www.comptia.org/en-us/blog/what-is-a-network-protocol/)
+- [World Wide Web - GeeksforGeeks](https://www.geeksforgeeks.org/computer-networks/world-wide-web-www/)
+
+---
