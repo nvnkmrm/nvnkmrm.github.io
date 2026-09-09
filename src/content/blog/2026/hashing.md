@@ -294,13 +294,6 @@ Collisions are unavoidable in a general-purpose hash table because we are mappin
 
 Hash tables therefore need a strategy for handling collisions.
 
-Common approaches include:
-
-- **Separate Chaining**
-- **Open Addressing**
-
-The collision-resolution strategy is an important part of a hash table's implementation.
-
 ## Collision Handling in Hash Tables
 
 A **collision** occurs when two or more keys produce the same hash index.
