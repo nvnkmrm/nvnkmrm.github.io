@@ -120,7 +120,10 @@ export default function BlogPostPage() {
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeHighlight, rehypeRaw]}
               components={{
-                code: CodeBlock,
+                code: ({ children, ...props }) => (
+                  <code {...props}>{children}</code>
+                ),
+                pre: CodeBlock,
               }}
             >
               {post.content}
