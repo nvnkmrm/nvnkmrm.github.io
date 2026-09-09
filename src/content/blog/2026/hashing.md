@@ -301,6 +301,187 @@ Common approaches include:
 
 The collision-resolution strategy is an important part of a hash table's implementation.
 
+## Collision Handling in Hash Tables
+
+A **collision** occurs when two or more keys produce the same hash index.
+
+For example, consider a hash table of size `5` with the hash function:
+
+```text
+hash(key) = key % 5
+```
+
+If we insert the following keys:
+
+```text
+10 → 10 % 5 = 0
+15 → 15 % 5 = 0
+20 → 20 % 5 = 0
+```
+
+All three keys produce the same index `0`.
+
+```text
+10 → 0
+15 → 0
+20 → 0
+```
+
+This is called a **collision**.
+
+There are two common techniques used to handle collisions:
+
+1. **Separate Chaining**
+2. **Open Addressing**
+
+---
+
+## Separate Chaining
+
+**Separate Chaining** is a collision-handling technique where each position in the hash table can store multiple elements.
+
+When multiple keys generate the same index, they are stored together in a **chain**, usually using a linked list.
+
+For example:
+
+```text
+Hash table size = 5
+
+10 → 10 % 5 = 0
+15 → 15 % 5 = 0
+20 → 20 % 5 = 0
+```
+
+Since all three keys produce index `0`, they are stored in the same chain:
+
+```text
+Index 0 → 10 → 15 → 20
+Index 1
+Index 2
+Index 3
+Index 4
+```
+
+Here, the hash table does not need to find another empty index. Instead, it keeps the collided elements together at the same index.
+
+### Advantages of Separate Chaining
+
+- Simple to implement.
+- Multiple elements can be stored at the same index.
+- Deletion is relatively simple.
+- The hash table can store more elements than the number of available indexes.
+
+### Disadvantages of Separate Chaining
+
+- Requires additional memory for storing the chains.
+- Searching can become slower when a chain becomes long.
+- Extra pointer/reference overhead may be required when using linked lists.
+
+---
+
+## Open Addressing
+
+**Open Addressing** is another technique for handling collisions.
+
+In Open Addressing, all elements are stored **directly inside the hash table**.
+
+When a collision occurs, the hash table searches for another empty position to store the element.
+
+For example:
+
+```text
+Hash table size = 5
+
+10 → 10 % 5 = 0
+15 → 15 % 5 = 0
+```
+
+The key `15` also wants to occupy index `0`, but index `0` is already occupied by `10`.
+
+Instead of storing both elements at index `0`, Open Addressing searches for another empty position.
+
+```text
+Index 0 → 10
+Index 1 → 15
+Index 2
+Index 3
+Index 4
+```
+
+The process of finding another position is called **probing**.
+
+There are three common probing techniques:
+
+### 1. Linear Probing
+
+Search for the next available position one by one.
+
+```text
+0 → occupied
+1 → empty ← store here
+```
+
+### 2. Quadratic Probing
+
+Search for another position using increasing squared intervals.
+
+```text
+h(k)
+h(k) + 1²
+h(k) + 2²
+h(k) + 3²
+...
+```
+
+### 3. Double Hashing
+
+Use a second hash function to determine the next position.
+
+```text
+index = h1(key) + i × h2(key)
+```
+
+---
+
+## Separate Chaining vs Open Addressing
+
+The main difference is how they handle a collision.
+
+### Separate Chaining
+
+```text
+Collision
+   ↓
+Store multiple elements
+in the same bucket
+```
+
+Example:
+
+```text
+Index 0 → 10 → 15 → 20
+```
+
+### Open Addressing
+
+```text
+Collision
+   ↓
+Find another empty position
+```
+
+Example:
+
+```text
+Index 0 → 10
+Index 1 → 15
+Index 2 → 20
+```
+
+Therefore:
+
+> **Separate Chaining stores collided elements together, while Open Addressing finds another empty position in the hash table.**
+
 # Disadvantages of Hash Maps
 
 Hash maps provide very fast average-case lookup, but they also have some trade-offs.
