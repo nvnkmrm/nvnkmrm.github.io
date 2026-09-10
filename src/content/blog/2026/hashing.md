@@ -277,25 +277,6 @@ Therefore, `O(1)` should be understood as the expected complexity of the hash ta
 
 # Collision
 
-There is an important problem with hashing.
-
-Different keys can produce the same hash value or the same final array index.
-
-For example:
-
-```text
-Key A → Hash Function → 123
-Key B → Hash Function → 123
-```
-
-This situation is called a **collision**.
-
-Collisions are unavoidable in a general-purpose hash table because we are mapping a potentially enormous number of possible keys into a limited number of storage locations.
-
-Hash tables therefore need a strategy for handling collisions.
-
-## Collision Handling in Hash Tables
-
 A **collision** occurs when two or more keys produce the same hash index.
 
 For example, consider a hash table of size `5` with the hash function:
@@ -321,6 +302,10 @@ All three keys produce the same index `0`.
 ```
 
 This is called a **collision**.
+
+Collisions are unavoidable in a general-purpose hash table because we are mapping a potentially enormous number of possible keys into a limited number of storage locations.
+
+Hash tables therefore need a strategy for handling collisions.
 
 There are two common techniques used to handle collisions:
 
